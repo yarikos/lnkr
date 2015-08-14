@@ -1,6 +1,14 @@
-
+# IDE's workdir
 .idea
 
+# Mac OS directory settins
+.DS_Store
+
+# Local notes
+notes.txt
+
+# Dependency directory
+# https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
 node_modules
 
-notes.txt
+# 
