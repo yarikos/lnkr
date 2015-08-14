@@ -21,32 +21,32 @@ npm i -g lnkr
 ## Usage
 ```bash
 # Init lnkr for filename
-linker init <filename>
+lnkr init <filename>
 
 # Add first edition (or version or substition)
-linker <filename> add <filename-source-1> [as <tag-1>]
+lnkr <filename> add <filename-source-1> [as <tag-1>]
 
 # Add second edition
-#linker <filename> add <filename-source-2> [as <tag-2>]
+#lnkr <filename> add <filename-source-2> [as <tag-2>]
 
 # Switching between edititoins
-linker filename use <tag-1>
-linker filename use <tag-2>
+lnkr <filename> use <tag-1>
+lnkr <filename> use <tag-2>
 
 # Add third edition from same name from git 
 # (Sort of alias to git checkout branch -- filename_path)
-linker filename add --git <git branch or commit>
+lnkr <filename> add --git <git branch or commit>
 
 # Reset all lnkr stuff, restore to initial state of filename
-linker filename reset
+lnkr <filename> reset
 
 # Show all editions
-linker filename list
+lnkr <filename> list
 
-# Hide temporary lnkr dir (Actualy it moves from ./.lnkr to ~/.lnkr)
-linker hide
-# Move lnkr stuff back from ~/.lnkr to ./.lnkr
-linker unhide
+# Hide temporary lnkr dir (actually it moves from ./.lnkr to ~/.lnkr)
+lnkr hide
+# Move lnkr's stuff back from ~/.lnkr to ./.lnkr
+lnkr unhide
 ```
 
 
