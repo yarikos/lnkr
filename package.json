@@ -1,0 +1,26 @@
+{
+  "name": "lnkr",
+  "version": "0.0.0",
+  "description": "The utility allows to create and manage several versions (editions) of some file or directory and simply substitute it and quick change substitutions like nvm allows to deal with several versions of node engine.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:yarikos/lnkr.git"
+  },
+  "keywords": [
+    "link",
+    "ln",
+    "substitute",
+    "test",
+    "utility"
+  ],
+  "author": "yarikos",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yarikos/lnkr/issues"
+  },
+  "homepage": "https://github.com/yarikos/lnkr"
+}
