@@ -1,4 +1,4 @@
-# lnkr
+lnkr
 =============
 
 [![Build Status][travis-img]][travis-url]
