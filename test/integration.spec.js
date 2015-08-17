@@ -6,6 +6,8 @@ var expect = require('chai').expect;
 
 var cliPath = 'bin/cli.js';
 
+var subjectFile = 'origin.txt';
+
 describe("lnkr", function () {
 	describe.skip("after installation", function () {
 
@@ -28,18 +30,36 @@ describe("lnkr", function () {
 		chp.execFile(cliPath, done);
 	});
 
-	describe('when launched without args', function () {
+	describe("when launched without args", function () {
 
 		it("should show usage info", function (done) {
-			run(checkOutput);
-			function checkOutput(error, stdout, stderr) {
-				expect(error).to.not.be.true;
-				expect(stderr).to.be.empty;
+			run(checkNoErrors(checkOutput));
+			function checkOutput(stdout) {
 				expect(stdout).to.have.string('usage:');
 				done();
 			}
 		});
 	})
+
+	describe("after init", function () {
+		beforeEach(setupFixtures);
+
+		beforeEach(function (done) {
+			run(['init', subjectFile], done);
+		});
+
+		it.skip("should write, that lnkr has been initialized");
+
+		describe("and after list", function () {
+			it("should show", function (done) {
+				run([subjectFile, 'list'], checkNoErrors(checkOutput));
+				function checkOutput(stdout) {
+					expect(stdout).to.have.string('usage:');
+					done();
+				}
+			});
+		});
+	});
 });
 
 function run() {
@@ -51,18 +71,22 @@ function run() {
 		cwd: cwd
 	};
 	var execPath = path.relative(cwd, cliPath);
-	console.log('exec', execPath)
-	chp.execFile(execPath, args, options, handler);
+	chp.execFile(execPath, args, options, callback);
+}
 
-	function handler(error, stdout, stderr) {
+function checkNoErrors(callback) {
+	return function callbackForNoErrors(error, stdout, stderr) {
 		console.log('res', {
 			error: error,
 			stdout: stdout,
 			stderr: stderr
 		});
-		if (error) {
-			return callback(error);
-		}
-		return callback(null, stdout);
+		expect(error).to.not.exist;
+		expect(stderr).to.be.empty;
+		callback(stdout);
 	}
+}
+
+function setupFixtures() {
+	//@todo inplmement copying fixtures
 }
