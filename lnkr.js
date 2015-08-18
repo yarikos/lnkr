@@ -12,20 +12,19 @@ var confName = 'conf.json';
 function initRepo(cwd, callback) {
 	//@todo how about not existing cwd?
 	var dirPath = path.join(cwd, dirName);
+	//@todo how about already created dir?
 	fs.mkdirSync(dirPath);
 	writeConf(cwd, {});
 }
 
-
 function writeConf(cwd, obj) {
-	var confPath = path.join(cwd, confName);
+	var confPath = path.join(cwd, dirName, confName);
 	var data = serialize(obj);
 	fs.writeFileSync(confPath, data);
 }
 
-
 function readConf(cwd) {
-	var confPath = path.join(cwd, confName);
+	var confPath = path.join(cwd, dirName, confName);
 	var data = fs.readFileSync(confPath);
 	return unserialize(data);
 }
@@ -40,5 +39,5 @@ function unserialize(data) {
 }
 
 exports.writeConf = writeConf;
-exports.readConf = writeConf;
+exports.readConf = readConf;
 exports.initRepo = initRepo;
