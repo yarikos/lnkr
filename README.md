@@ -49,6 +49,8 @@ lnkr hide
 lnkr unhide
 ```
 
+## Todo
+- [ ] Compression of the repo
 
 ## License
 
