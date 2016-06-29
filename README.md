@@ -12,7 +12,7 @@ The utility allows to create and manage several versions (editions) of some file
 # Not implemented even anything here yet. Just todo notes for now.
 
 
-## Instalation
+## Installation
 ```bash
 npm i -g lnkr
 ```
