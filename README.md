@@ -50,6 +50,7 @@ lnkr unhide
 ```
 
 ## Todo
+- [ ] Autocomplete (Filename, tag)
 - [ ] Compression of the repo
 
 ## License
